@@ -11,7 +11,7 @@ const ErrorPage = () => {
   return (
     <section className="flex items-center h-screen p-16 text-gray-900">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto mt-16">
-        <img src={Error} alt="" className="lg:h-96"/>
+        <img src={Error} alt="" className="lg:h-96"/> 
          
         <div className="max-w-md text-center mt-4">
           <h2 className="mb-2 font-semibold text-xl">
