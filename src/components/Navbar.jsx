@@ -1,61 +1,45 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Lock from '../assets/lock.png'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Lock from "../assets/lock.png";
 
 const Navbar = () => {
-  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-
   return (
-    <div class="px-4 bg-gray-100 py-5 mx-auto sm:max-full md:max-w-full lg:max-w-screen md:px-24 lg:px-8">
+    <div class="px-4 bg-gray-50 py-5 mx-auto sm:max-full md:max-w-full lg:max-w-screen md:px-24 lg:px-8">
       <div class="relative flex items-center justify-between">
-        <Link
-          to="/"
-          aria-label="Company"
-          title="Company"
-          class="inline-flex items-center"
-        >
-          <img src={Lock} alt="" className='h-16 w-16'/>
+        <Link to="/" class="inline-flex items-center">
+          <img src={Lock} alt="" className="h-16 w-16" />
           <span class="ml-2 text-sm md:text-base lg:text-xl font-bold tracking-wide text-gray-800 uppercase">
-          Super Authentication
+            Super Authentication
           </span>
         </Link>
         <ul class=" items-center hidden space-x-8 lg:flex">
-  
-        <li>
-                      <Link
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Features
-                      </Link>
-                    </li>
-      
           <li>
             <Link
               to="/"
-              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-              aria-label="Sign up"
-              title="Sign up"
+              class=" tracking-wide text-gray-800 font-bold transition-colors duration-200 hover:text-blue-500"
             >
-              Sign up
+              Home
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/login"
+              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-500 hover:bg-lime-600 focus:shadow-outline focus:outline-none"
+            >
+              Login
             </Link>
           </li>
           <li>
             <Link
-              to="/"
-              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-              aria-label="Sign up"
-              title="Sign up"
+              to="/register"
+              class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-lime-600 focus:shadow-outline focus:outline-none"
             >
-              Sign up
+              Register
             </Link>
           </li>
-
-
         </ul>
         <div class="lg:hidden">
           <button
@@ -84,17 +68,12 @@ const Navbar = () => {
               <div class="p-5 bg-white border rounded shadow-sm">
                 <div class="flex items-center justify-between mb-4">
                   <div>
-                  <Link
-          to="/"
-          aria-label="Company"
-          title="Company"
-          class="inline-flex items-center"
-        >
-          <img src={Lock} alt="" className='h-16 w-16'/>
-          <span class="ml-2 text-xs md:text-base lg:text-xl font-bold md:tracking-wide text-gray-800 uppercase">
-          Super Authentication
-          </span>
-        </Link>
+                    <Link to="/" class="inline-flex items-center">
+                      <img src={Lock} alt="" className="h-16 w-16" />
+                      <span class="ml-2 text-sm md:text-base lg:text-xl font-bold md:tracking-wide text-gray-800 uppercase">
+                        Super Authentication
+                      </span>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -116,52 +95,30 @@ const Navbar = () => {
                   <ul class="space-y-4">
                     <li>
                       <Link
+                        onClick={() => setIsMenuOpen(false)}
                         to="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        class=" tracking-wide text-gray-800 font-bold transition-colors duration-200 hover:text-blue-500"
                       >
-                        Product
+                        Home
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        onClick={() => setIsMenuOpen(false)}
+                        to="/login"
+                        class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-500 hover:bg-lime-600 focus:shadow-outline focus:outline-none"
+                      >
+                        Login
                       </Link>
                     </li>
                     <li>
                       <Link
-                        to="/"
-                        aria-label="Our product"
-                        title="Our product"
-                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                        onClick={() => setIsMenuOpen(false)}
+                        to="/register"
+                        class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-500 hover:bg-lime-600 focus:shadow-outline focus:outline-none"
                       >
-                        Features
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Pricing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        aria-label="About us"
-                        title="About us"
-                        class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        About us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/"
-                        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Sign up
+                        Register
                       </Link>
                     </li>
                   </ul>
