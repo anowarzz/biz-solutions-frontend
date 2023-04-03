@@ -15,12 +15,11 @@ import Briefcase from "../../assets/briefcase.png";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-    
+
   const [userInfo, setUserInfo] = useState({
     name: "",
     orgName: "",
     email: "",
-    // accountType: "",
     password: "",
     confirmPassword: "",
     terms: false,
@@ -37,6 +36,8 @@ const Register = () => {
     const name = userInfo.name;
     const email = userInfo.email;
     const password = userInfo.password;
+   const terms = userInfo.terms ;
+   const orgName = userInfo.orgName ;
 
     if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       setError("Please Provide a Valid Email");
@@ -55,22 +56,25 @@ const Register = () => {
       setLoading(false);
       return;
     }
+
+    console.log(name, email, password, terms, orgName);
   };
 
   return (
     <Box
       sx={{
         width: "100%",
-        margin: "60px auto 200px ",
+        margin: "40px auto",
         boxShadow: "inherit",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: "80vh",
         padding: "2rem",
+        zIndex: 10,
       }}
     >
-      <Stack width="550px" margin="auto">
+      <Stack width="550px" margin="auto" zIndex={2}>
         <Paper
           sx={{
             paddingTop: "1rem",

@@ -21,19 +21,10 @@ const Login = () => {
     const email = loginInfo.email;
     const password = loginInfo.password;
 
+    console.log(email, password);
+
     if (email !== "" || password !== "") {
-      setLoading(true);
-      logIn(email, password)
-        .then((result) => {
-          const user = result.user;
-          setUser(user);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.log(err);
-          setError(err.message);
-          setLoading(false);
-        });
+    
     }
   };
 
