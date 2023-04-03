@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link to="/" className="inline-flex items-center">
           <img src={Lock} alt="" className="h-16 w-16" />
           <span className="ml-2 text-sm md:text-base lg:text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Super Authentication
+            <span className="text-blue-500">Biz</span> Solutions
           </span>
         </Link>
         <ul className=" items-center hidden space-x-8 lg:flex">
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <Link to="/" className="inline-flex items-center">
                       <img src={Lock} alt="" className="h-16 w-16" />
                       <span className="ml-2 text-sm md:text-base lg:text-xl font-bold md:tracking-wide text-gray-800 uppercase">
-                        Business 
+                        Tech Solutions
                       </span>
                     </Link>
                   </div>
