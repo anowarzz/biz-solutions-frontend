@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import officeImage from '../../assets/office.jpg'
 
 const HeroSection = () => {
     return (
@@ -15,8 +16,8 @@ const HeroSection = () => {
         </svg>
         <img
           className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-          src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-          alt=""
+          src={officeImage}
+          alt="People in office"
         />
       </div>
       <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
@@ -25,7 +26,7 @@ const HeroSection = () => {
           <h2 className="mb-5  text-xl font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl  uppercase py-4 ">
             Let us take care of
             <br className="hidden md:block" />
-            <h2 className='pt-2'>your <span className='text-blue-700'>business</span> </h2>
+            <h2 className='pt-2'>your <span className='text-blue-700'>business</span> online</h2>
        
           </h2>
           <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
