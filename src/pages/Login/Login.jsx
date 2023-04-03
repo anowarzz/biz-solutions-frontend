@@ -1,35 +1,13 @@
-import {
-  Button,
-  Divider,
-  InputAdornment,
-  InputLabel,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, Divider, Paper, TextField, Typography } from "@mui/material";
 import { Box, Stack } from "@mui/system";
 import React, { useContext, useState } from "react";
-//   import Textarea from "@mui/joy/Textarea";
-import GoogleIcon from "@mui/icons-material/Google";
-//   import { GoogleAuthProvider } from "firebase/auth";
-//   import { AuthContext } from "@/contexts/AuthProvider";
 import { ScaleLoader } from "react-spinners";
 import { Link } from "react-router-dom";
-
-//   const googleProvider = new GoogleAuthProvider();
+import Lock from "../../assets/lock.png";
 
 const Login = () => {
-  // Context values
-  // const {setUser,logIn,googleLogIn} = useContext(AuthContext)
-
-  // loading state
-  const [loading, setLoading] = useState(false);
-
   // error state
   const [error, setError] = useState("");
-
-  // Router hook
-  // const router = useRouter();
 
   const [loginInfo, setLoginInfo] = useState({
     email: "",
@@ -50,8 +28,6 @@ const Login = () => {
           const user = result.user;
           setUser(user);
           setLoading(false);
-
-          router.push("/");
         })
         .catch((err) => {
           console.log(err);
@@ -61,29 +37,11 @@ const Login = () => {
     }
   };
 
-  // User Login with google Account
-  const handleGoogleLogIn = () => {
-    setLoading(true);
-
-    googleLogIn(googleProvider)
-      .then((result) => {
-        const user = result.user;
-        setUser(user);
-        setLoading(false);
-        router.push("/");
-      })
-      .catch((err) => {
-        console.log(err);
-        setError(err.message);
-        setLoading(false);
-      });
-  };
-
   return (
     <Box
       sx={{
         width: "100%",
-        margin: "80px auto",
+        margin: "60px auto",
         boxShadow: "inherit",
         display: "flex",
         justifyContent: "center",
@@ -102,8 +60,7 @@ const Login = () => {
           }}
         >
           <Stack justifyContent="center" alignItems="center">
- 
-
+            <img src={Lock} alt="" className="h-12 md:h-16 w-12 md:w-16 my-4" />
             <Typography
               variant="h4"
               textAlign="center"
@@ -117,13 +74,13 @@ const Login = () => {
 
           <form required>
             <Stack spacing={3}>
-              {loading && (
+              {/* {loading && (
                 <ScaleLoader
                   color="#36d7b7"
                   size={100}
                   style={{ textAlign: "center" }}
                 />
-              )}
+              )} */}
               <TextField
                 id="email"
                 type="email"
@@ -173,23 +130,6 @@ const Login = () => {
               >
                 OR
               </Divider>
-              <Button
-                onClick={handleGoogleLogIn}
-                size="large"
-                variant="outlined"
-                color="success"
-                sx={{
-                  "&:hover": {
-                    backgroundColor: "#2E7D32",
-                    color: "white",
-                  },
-                }}
-              >
-                <GoogleIcon sx={{ marginRight: "10px" }} />
-                <Typography variant="subtitle2">
-                  Continue With Google
-                </Typography>
-              </Button>
             </Stack>
           </form>
           <Typography variant="subtitle2" textAlign="center" mt={2}>

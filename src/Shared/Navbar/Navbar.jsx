@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Lock from "../assets/lock.png";
+import Lock from "../../assets/lock.png";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,14 +64,14 @@ const Navbar = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute z-10 top-0 left-0 w-full">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <Link to="/" className="inline-flex items-center">
                       <img src={Lock} alt="" className="h-16 w-16" />
                       <span className="ml-2 text-sm md:text-base lg:text-xl font-bold md:tracking-wide text-gray-800 uppercase">
-                        Super Authentication
+                        Business 
                       </span>
                     </Link>
                   </div>
